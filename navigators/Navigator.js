@@ -4,6 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { Image, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { Consts } from "../constants/Consts";
+import { Chat } from "../screens/Chat";
 import { Directs } from "../screens/Directs";
 import { Home } from "../screens/Home";
 import { Profile } from "../screens/Profile";
@@ -56,6 +57,27 @@ export const Navigator = () => {
         component={Directs}
         options={{
           title: "Messages",
+          animationEnabled: false,
+          headerShadowVisible: false,
+          headerRight: () => <User />,
+          headerStyle: {
+            backgroundColor: Consts.colors.back,
+            height: 90,
+          },
+          headerTitleStyle: {
+            color: "white",
+            fontFamily: Consts.font,
+            fontSize: 25,
+          },
+          headerTintColor: "white",
+        }}
+      />
+
+      <Stack.Screen
+        name="chat"
+        component={Chat}
+        options={{
+          title: "",
           animationEnabled: false,
           headerShadowVisible: false,
           headerRight: () => <User />,

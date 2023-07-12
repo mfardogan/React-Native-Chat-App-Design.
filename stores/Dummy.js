@@ -37,4 +37,15 @@ export const Dummy = {
       news: faker.number.int() % 3,
       text: faker.lorem.sentence(),
     })),
+
+  chat: {
+    date: faker.date.past(),
+    receiver: faker.image.avatarLegacy(),
+    messages: Array(30)
+      .fill(null)
+      .map((v) => ({
+        isme: faker.datatype.boolean(),
+        text: faker.lorem.sentences(),
+      })),
+  },
 };
