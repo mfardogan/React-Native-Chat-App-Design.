@@ -4,10 +4,10 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { Image, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { Consts } from "../constants/Consts";
-import { Chat } from "../screens/Chat";
-import { Directs } from "../screens/Directs";
-import { Home } from "../screens/Home";
-import { Profile } from "../screens/Profile";
+import { Chat } from "../screens/Chat/Chat";
+import { Directs } from "../screens/Direct/Directs";
+import { Home } from "../screens/Home/Home";
+import { Profile } from "../screens/Profile/Profile";
 import { Dummy } from "../stores/Dummy";
 
 const Stack = createStackNavigator();
@@ -46,7 +46,7 @@ export const Navigator = () => {
           headerTitleStyle: {
             color: "white",
             fontFamily: Consts.font,
-            fontSize: 25,
+            fontSize: 20,
           },
           headerTintColor: "white",
         }}
@@ -67,7 +67,7 @@ export const Navigator = () => {
           headerTitleStyle: {
             color: "white",
             fontFamily: Consts.font,
-            fontSize: 25,
+            fontSize: 20,
           },
           headerTintColor: "white",
         }}
@@ -88,7 +88,7 @@ export const Navigator = () => {
           headerTitleStyle: {
             color: "white",
             fontFamily: Consts.font,
-            fontSize: 25,
+            fontSize: 20,
           },
           headerTintColor: "white",
         }}

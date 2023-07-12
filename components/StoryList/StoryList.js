@@ -1,6 +1,6 @@
 import { FlatList } from "react-native-gesture-handler";
-import { Dummy } from "../stores/Dummy";
-import { Story } from "./Story";
+import { Dummy } from "../../stores/Dummy";
+import { Story } from "../Story/Story";
 
 export const StoryList = () => {
   return (
