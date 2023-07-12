@@ -16,7 +16,7 @@ export const Styles = StyleSheet.create({
   text: {
     width: 300,
     height: 50,
-    backgroundColor: "#5c5747",
+    backgroundColor: Consts.colors.appLight,
     borderRadius: 25,
     padding: 5,
     paddingLeft: 20,

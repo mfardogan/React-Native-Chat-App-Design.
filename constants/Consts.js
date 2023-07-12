@@ -2,7 +2,9 @@ export const Consts = {
   font: "Lexend",
   colors: {
     back: "#292929",
-    app: "#f0c435",
+    app: "#612FC6",
+    appLight: "#66616D",
+    appExtraLight: "#89878D",
     danger: "#a33f34",
     title: "white",
   },

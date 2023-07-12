@@ -19,7 +19,7 @@ export const Styles = StyleSheet.create({
     width: 70,
     height: 70,
     borderRadius: 35,
-    borderWidth: 2,
+    borderWidth: 3,
     borderColor: Consts.colors.app,
   },
 
@@ -49,6 +49,6 @@ export const Styles = StyleSheet.create({
   newsText: {
     fontFamily: Consts.font,
     fontSize: 13,
-    color: Consts.colors.back,
+    color: Consts.colors.title,
   },
 });

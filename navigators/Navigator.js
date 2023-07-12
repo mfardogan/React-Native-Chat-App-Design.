@@ -130,12 +130,29 @@ const Notifications = () => {
       style={{
         margin: 5,
         padding: 5,
+        width: 40,
+        height: 40,
         paddingTop: 10,
         backgroundColor: Consts.colors.back,
+
         justifyContent: "center",
         alignItems: "center",
       }}
     >
+      <View
+        style={{
+          backgroundColor: Consts.colors.app,
+          width: 8,
+          height: 8,
+          borderRadius: 5,
+          justifyContent: "center",
+          alignItems: "center",
+          position: "absolute",
+          top: 7,
+          left: 7,
+        }}
+      ></View>
+
       <TouchableOpacity
         onPress={() => {
           nav.navigate("directs");

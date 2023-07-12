@@ -1,11 +1,26 @@
+import { useNavigation } from "@react-navigation/native";
+import React from "react";
 import { Image, Text, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
+import { Consts } from "../../constants/Consts";
 import { Dummy } from "../../stores/Dummy";
 import { Styles } from "./Styles";
 
 export const Chat = () => {
   const room = Dummy.chat;
+  const user = Dummy.users.at(3);
   const { container, date } = Styles;
+  const nav = useNavigation();
+
+  React.useEffect(() => {
+    nav.setOptions({
+      title: user.username,
+      headerTitleStyle: {
+        fontFamily: Consts.font,
+        fontSize: 20,
+      },
+    });
+  }, []);
 
   return (
     <View style={container}>
