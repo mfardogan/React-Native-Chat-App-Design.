@@ -1,12 +1,13 @@
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { Text, View } from "react-native";
+import { Image, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { Consts } from "../constants/Consts";
 import { Directs } from "../screens/Directs";
 import { Home } from "../screens/Home";
 import { Profile } from "../screens/Profile";
+import { Dummy } from "../stores/Dummy";
 
 const Stack = createStackNavigator();
 
@@ -32,13 +33,21 @@ export const Navigator = () => {
         name="profile"
         component={Profile}
         options={{
-          title: "Profile",
           animationEnabled: false,
           headerShadowVisible: false,
+          headerRight: () => <User />,
+
+          headerStyle: {
+            height: 90,
+            backgroundColor: Consts.colors.back,
+          },
+          title: "",
           headerTitleStyle: {
+            color: "white",
             fontFamily: Consts.font,
             fontSize: 25,
           },
+          headerTintColor: "white",
         }}
       />
 
@@ -49,13 +58,45 @@ export const Navigator = () => {
           title: "Messages",
           animationEnabled: false,
           headerShadowVisible: false,
+          headerRight: () => <User />,
+          headerStyle: {
+            backgroundColor: Consts.colors.back,
+            height: 90,
+          },
           headerTitleStyle: {
+            color: "white",
             fontFamily: Consts.font,
             fontSize: 25,
           },
+          headerTintColor: "white",
         }}
       />
     </Stack.Navigator>
+  );
+};
+
+const User = () => {
+  return (
+    <View
+      style={{
+        margin: 10,
+        justifyContent: "center",
+        alignItems: "center",
+        width: 60,
+        height: 60,
+      }}
+    >
+      <Image
+        style={{
+          width: 55,
+          height: 55,
+          borderRadius: 30,
+          borderWidth: 2,
+          borderColor: Consts.colors.app,
+        }}
+        source={{ uri: Dummy.user.avatar }}
+      />
+    </View>
   );
 };
 

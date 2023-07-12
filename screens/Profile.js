@@ -1,16 +1,29 @@
-import { Text, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import React from "react";
+import { View } from "react-native";
+import { Consts } from "../constants/Consts";
+import { Dummy } from "../stores/Dummy";
 
 export const Profile = () => {
+  const user = Dummy.users.at(9);
+  const nav = useNavigation();
+
+  React.useEffect(() => {
+    nav.setOptions({
+      title: user.name + " " + user.surname,
+      headerTitleStyle: {
+        fontFamily: Consts.font,
+        fontSize: 22,
+      },
+    });
+  }, []);
   return (
     <View
       style={{
         flex: 1,
-        justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "white",
+        backgroundColor: Consts.colors.back,
       }}
-    >
-      <Text>Profile</Text>
-    </View>
+    ></View>
   );
 };
