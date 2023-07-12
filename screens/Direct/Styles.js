@@ -14,7 +14,7 @@ export const Styles = StyleSheet.create({
     justifyContent: "center",
   },
   text: {
-    width: 300,
+    width: 350,
     height: 50,
     backgroundColor: Consts.colors.appLight,
     borderRadius: 25,
@@ -23,8 +23,11 @@ export const Styles = StyleSheet.create({
     color: "white",
     fontFamily: Consts.font,
     fontSize: 17,
+    paddingRight: 60,
   },
   btn: {
+    position: "absolute",
+    left: 325,
     marginLeft: 10,
     backgroundColor: Consts.colors.app,
     width: 40,

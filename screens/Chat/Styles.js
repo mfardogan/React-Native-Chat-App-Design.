@@ -4,9 +4,11 @@ import { Consts } from "../../constants/Consts";
 export const Styles = StyleSheet.create({
   container: { backgroundColor: Consts.colors.back, flex: 1, padding: 10 },
   date: {
-    fontFamily: Consts.font,
     color: "white",
     textAlign: "center",
+    fontFamily: Consts.font,
+    fontSize: 16,
+    marginBottom: 5,
   },
 
   msg: { flexDirection: "row", padding: 5 },
@@ -19,9 +21,9 @@ export const Styles = StyleSheet.create({
   },
   boxSender: {
     margin: 5,
-    borderBottomLeftRadius: 35,
+    borderBottomLeftRadius: 25,
     borderBottomRightRadius: 5,
-    borderTopRightRadius: 35,
+    borderTopRightRadius: 25,
     borderTopLeftRadius: 5,
     backgroundColor: Consts.colors.appLight,
     width: 250,
@@ -34,13 +36,12 @@ export const Styles = StyleSheet.create({
   },
   boxMe: {
     margin: 5,
-    borderTopLeftRadius: 35,
+    borderTopLeftRadius: 25,
     borderTopRightRadius: 5,
-    borderBottomRightRadius: 35,
+    borderBottomRightRadius: 25,
     borderBottomLeftRadius: 5,
-
     backgroundColor: Consts.colors.appExtraLight,
-    width: 250,
+    width: 300,
     padding: 15,
   },
   textMe: { fontFamily: Consts.font, color: "white", fontSize: 12 },

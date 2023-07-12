@@ -1,7 +1,8 @@
+import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Image, Text, View } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
+import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 import { Consts } from "../../constants/Consts";
 import { Dummy } from "../../stores/Dummy";
 import { Styles } from "./Styles";
@@ -36,6 +37,7 @@ export const Chat = () => {
 };
 
 const ToMe = ({ image, message, isme }) => {
+  const [like, setLike] = React.useState(false);
   const { boxSender, textSender, textMe, boxMe, msg, img } = Styles;
   return (
     <View style={{ alignItems: isme ? "flex-end" : "flex-start" }}>
@@ -44,6 +46,15 @@ const ToMe = ({ image, message, isme }) => {
           <Image style={img} source={{ uri: image }} />
           <View style={boxSender}>
             <Text style={textSender}>{message}</Text>
+          </View>
+          <View style={{ justifyContent: "center", alignItems: "center" }}>
+            <TouchableOpacity onPress={() => setLike((pre) => !pre)}>
+              <Ionicons
+                size={20}
+                name={like ? "heart-sharp" : "heart-outline"}
+                color={like ? Consts.colors.app : Consts.colors.appExtraLight}
+              />
+            </TouchableOpacity>
           </View>
         </View>
       )}
