@@ -1,8 +1,18 @@
-import { Feather, Ionicons } from "@expo/vector-icons";
+import {
+  Feather,
+  Ionicons,
+  MaterialCommunityIcons,
+  MaterialIcons,
+} from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Image, Text, View } from "react-native";
-import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
+
+import {
+  ScrollView,
+  TextInput,
+  TouchableOpacity,
+} from "react-native-gesture-handler";
 import { Consts } from "../../constants/Consts";
 import { Dummy } from "../../stores/Dummy";
 import { Styles } from "./Styles";
@@ -10,7 +20,8 @@ import { Styles } from "./Styles";
 export const Chat = () => {
   const room = Dummy.chat;
   const user = Dummy.users.at(3);
-  const { container, date } = Styles;
+  const { container, date, sendMessageBox, textBox, attachments, send } =
+    Styles;
   const navigation = useNavigation();
 
   React.useEffect(() => {
@@ -33,6 +44,31 @@ export const Chat = () => {
           <ToMe key={i} image={room.receiver} message={x.text} isme={x.isme} />
         ))}
       </ScrollView>
+
+      <View style={sendMessageBox}>
+        <TextInput
+          multiline
+          style={textBox}
+          placeholder="Type"
+          placeholderTextColor={"white"}
+        />
+
+        <View style={attachments}>
+          <TouchableOpacity>
+            <MaterialIcons name="attachment" size={30} color="white" />
+          </TouchableOpacity>
+        </View>
+
+        <View style={send}>
+          <TouchableOpacity>
+            <MaterialCommunityIcons
+              name="send-outline"
+              size={24}
+              color="white"
+            />
+          </TouchableOpacity>
+        </View>
+      </View>
     </View>
   );
 };
