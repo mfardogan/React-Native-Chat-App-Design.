@@ -20,16 +20,17 @@ import { Styles } from "./Styles";
 export const Chat = () => {
   const room = Dummy.chat;
   const user = Dummy.users.at(3);
+  const navigation = useNavigation();
+
   const { container, date, sendMessageBox, textBox, attachments, send } =
     Styles;
-  const navigation = useNavigation();
 
   React.useEffect(() => {
     navigation.setOptions({
       title: user.username.substring(0, 15),
       headerTitleStyle: {
-        fontFamily: Consts.font,
         fontSize: 20,
+        fontFamily: Consts.font,
       },
       headerRight: () => <Icons />,
     });

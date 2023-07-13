@@ -48,4 +48,25 @@ export const Dummy = {
         text: faker.lorem.sentences(),
       })),
   },
+  profiles: Array(10)
+    .fill(null)
+    .map((i) => ({
+      id: faker.string.uuid(),
+      name: faker.person.firstName(),
+      surname: faker.person.lastName(),
+      avatar: faker.image.avatarLegacy(),
+      location: faker.location.country(),
+      followers: faker.number.int() % 1000,
+      follows: faker.number.int() % 500,
+
+      posts: Array(50)
+        .fill(null)
+        .map((e) => ({
+          id: faker.string.uuid(),
+          date: faker.date.past(),
+          image: faker.image.urlPicsumPhotos(),
+          likes: faker.number.int() % 400,
+          comments: faker.number.int() % 20,
+        })),
+    })),
 };
