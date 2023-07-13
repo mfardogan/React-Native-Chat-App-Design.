@@ -45,4 +45,22 @@ export const Styles = StyleSheet.create({
     padding: 15,
   },
   textMe: { fontFamily: Consts.font, color: "white", fontSize: 12 },
+
+  iconBox: {
+    width: 50,
+    height: 50,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  iconCircle: {
+    backgroundColor: Consts.colors.app,
+    width: 45,
+    height: 45,
+    borderRadius: 25,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+
+  messageContainer: { justifyContent: "center", alignItems: "center" },
 });

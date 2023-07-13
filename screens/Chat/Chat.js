@@ -1,4 +1,4 @@
-import { Ionicons } from "@expo/vector-icons";
+import { Feather, Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Image, Text, View } from "react-native";
@@ -11,15 +11,16 @@ export const Chat = () => {
   const room = Dummy.chat;
   const user = Dummy.users.at(3);
   const { container, date } = Styles;
-  const nav = useNavigation();
+  const navigation = useNavigation();
 
   React.useEffect(() => {
-    nav.setOptions({
-      title: user.username,
+    navigation.setOptions({
+      title: user.username.substring(0, 15),
       headerTitleStyle: {
         fontFamily: Consts.font,
         fontSize: 20,
       },
+      headerRight: () => <Icons />,
     });
   }, []);
 
@@ -36,9 +37,23 @@ export const Chat = () => {
   );
 };
 
+const Icons = () => {
+  const { iconBox, iconCircle } = Styles;
+  return (
+    <View style={iconBox}>
+      <TouchableOpacity>
+        <View style={iconCircle}>
+          <Feather name="phone-call" size={20} color="white" />
+        </View>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
 const ToMe = ({ image, message, isme }) => {
   const [like, setLike] = React.useState(false);
-  const { boxSender, textSender, textMe, boxMe, msg, img } = Styles;
+  const { boxSender, textSender, textMe, boxMe, msg, img, messageContainer } =
+    Styles;
   return (
     <View style={{ alignItems: isme ? "flex-end" : "flex-start" }}>
       {!isme && (
@@ -47,7 +62,7 @@ const ToMe = ({ image, message, isme }) => {
           <View style={boxSender}>
             <Text style={textSender}>{message}</Text>
           </View>
-          <View style={{ justifyContent: "center", alignItems: "center" }}>
+          <View style={messageContainer}>
             <TouchableOpacity onPress={() => setLike((pre) => !pre)}>
               <Ionicons
                 size={20}

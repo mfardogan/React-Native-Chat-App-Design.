@@ -26,7 +26,7 @@ export const Dummy = {
       username: faker.internet.userName(),
     })),
 
-  directs: Array(40)
+  directs: Array(10)
     .fill(null)
     .map((v) => ({
       id: faker.string.uuid(),
@@ -41,7 +41,7 @@ export const Dummy = {
   chat: {
     date: faker.date.past(),
     receiver: faker.image.avatarLegacy(),
-    messages: Array(30)
+    messages: Array(10)
       .fill(null)
       .map((v) => ({
         isme: faker.datatype.boolean(),
