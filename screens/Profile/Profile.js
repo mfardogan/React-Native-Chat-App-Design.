@@ -2,6 +2,7 @@ import { MaterialCommunityIcons, Octicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Image, StatusBar, Text, View } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 import { Consts } from "../../constants/Consts";
 import { Dummy } from "../../stores/Dummy";
 import { Styles } from "./Styles";
@@ -68,29 +69,34 @@ export const Profile = () => {
           </View>
         </View>
       </View>
+
+      <Nocontent />
+    </View>
+  );
+};
+
+const Nocontent = () => {
+  const { shareContainer, shareImg, shareText } = Styles;
+
+  return (
+    <View style={shareContainer}>
+      <TouchableOpacity>
+        <Image
+          style={shareImg}
+          source={require("../../assets/images/add.png")}
+        />
+      </TouchableOpacity>
+      <Text style={shareText}>Share something.</Text>
     </View>
   );
 };
 
 const Segment = ({ number, text }) => {
+  const { segmentContainer, segmentTextBig, segmentTextSmall } = Styles;
   return (
-    <View
-      style={{
-        margin: 2,
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: Consts.colors.appExtraLight,
-        borderRadius: 30,
-        width: 70,
-        height: 45,
-      }}
-    >
-      <Text style={{ fontFamily: Consts.font, color: "white", fontSize: 20 }}>
-        {number}
-      </Text>
-      <Text style={{ fontFamily: Consts.font, color: "white", fontSize: 10 }}>
-        {text}
-      </Text>
+    <View style={segmentContainer}>
+      <Text style={segmentTextBig}>{number}</Text>
+      <Text style={segmentTextSmall}>{text}</Text>
     </View>
   );
 };

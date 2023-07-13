@@ -47,6 +47,7 @@ export const Styles = StyleSheet.create({
   textMe: { fontFamily: Consts.font, color: "white", fontSize: 12 },
 
   iconBox: {
+    margin: 10,
     width: 50,
     height: 50,
     flexDirection: "row",
@@ -77,11 +78,8 @@ export const Styles = StyleSheet.create({
     paddingLeft: 15,
     paddingRight: 85,
     fontFamily: Consts.font,
-    height: 60,
-    borderBottomRightRadius: 25,
-    borderBottomLeftRadius: 5,
-    borderTopLeftRadius: 25,
-    borderTopRightRadius: 5,
+    height: 55,
+    borderRadius: 30,
     backgroundColor: Consts.colors.appExtraLight,
   },
 

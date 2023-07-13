@@ -58,4 +58,42 @@ export const Styles = StyleSheet.create({
     alignItems: "center",
     flexDirection: "row",
   },
+
+  shareContainer: {
+    margin: 20,
+    justifyContent: "center",
+    alignItems: "center",
+    borderWidth: 4,
+    borderStyle: "dashed",
+    borderColor: Consts.colors.appExtraLight,
+    borderRadius: 10,
+    width: 220,
+    height: 190,
+    padding: 10,
+  },
+  shareImg: {
+    width: 150,
+    height: 150,
+    borderWidth: 2,
+    borderColor: Consts.colors.appLight,
+    borderRadius: 75,
+  },
+  shareText: {
+    fontFamily: Consts.font,
+    color: Consts.colors.appExtraLight,
+    fontSize: 15,
+  },
+
+  segmentContainer: {
+    margin: 2,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: Consts.colors.appExtraLight,
+    borderRadius: 30,
+    width: 70,
+    height: 45,
+  },
+
+  segmentTextBig: { fontFamily: Consts.font, color: "white", fontSize: 20 },
+  segmentTextSmall: { fontFamily: Consts.font, color: "white", fontSize: 10 },
 });
