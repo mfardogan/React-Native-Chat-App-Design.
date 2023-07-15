@@ -79,7 +79,10 @@ export const Styles = StyleSheet.create({
     paddingRight: 85,
     fontFamily: Consts.font,
     height: 55,
-    borderRadius: 30,
+    borderBottomRightRadius: 25,
+    borderBottomLeftRadius: 5,
+    borderTopRightRadius: 5,
+    borderTopLeftRadius: 25,
     backgroundColor: Consts.colors.appExtraLight,
   },
 

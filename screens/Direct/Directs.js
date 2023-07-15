@@ -1,8 +1,8 @@
 import { Feather } from "@expo/vector-icons";
 import { TouchableOpacity, View } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
-import { MessageList } from "../../components/MessageList/MessageList";
 import { Consts } from "../../constants/Consts";
+import { MessageList } from "./MessageList/MessageList";
 import { Styles } from "./Styles";
 
 export const Directs = () => {
@@ -23,6 +23,7 @@ export const Directs = () => {
           </TouchableOpacity>
         </View>
       </View>
+
       <MessageList />
     </View>
   );

@@ -1,6 +1,6 @@
 import { FlatList } from "react-native";
-import { Dummy } from "../../stores/Dummy";
-import { Message } from "../Message/Message";
+import { Dummy } from "../../../stores/Dummy";
+import { Message } from "./Message/Message";
 
 export const MessageList = () => {
   return (

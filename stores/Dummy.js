@@ -68,5 +68,13 @@ export const Dummy = {
           likes: faker.number.int() % 400,
           comments: faker.number.int() % 20,
         })),
+
+      higlights: Array(15)
+        .fill(null)
+        .map((e) => ({
+          id: faker.string.uuid(),
+          image: faker.image.urlPicsumPhotos(),
+          text: faker.location.country().substring(0, 5),
+        })),
     })),
 };
